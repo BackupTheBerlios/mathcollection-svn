@@ -1,0 +1,34 @@
+                        QuickStart for MathCollection
+
+
+Preface
+-------
+
+This document describes how to use the package mathCollection by means of
+two test programms.
+
+
+Description for Unix/Linux
+--------------------------
+
+In the following the commands which can be executed are stated. Lines
+beginning with a hashmark are comment lines.
+
+# Create a directory.
+mkdir MathCollection
+
+# Change into the directory.
+cd MathCollection
+
+# Download the archive file mathCollection.tar.gz
+
+# Extract the files of the archive.
+tar -zxf mathCollection.tar.gz
+
+# Download the archive file mathCollTests.tar.gz
+
+# Extract the files of the archive.
+tar -zxf mathCollTests.tar.gz
+
+# Follow the description in file TEST.
+
