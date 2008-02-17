@@ -1,0 +1,35 @@
+                     Tests for package mathCollection
+
+
+Comparison:
+
+  With this class the execution times for two methods (powerSet() and
+  fixedSizeSubsets(Set,int) from MathSet) are compared by using the classes
+  HashSet, MathSet and Multiset.
+
+  To run the test, download the packages mathCollection.jar and
+  mathCollTests.jar.
+
+  Then execute on Linux:
+  java -classpath mathCollection.jar:mathCollTests.jar:. Comparison
+
+  On Windows execute:
+  java -classpath mathCollection.jar;mathCollTests.jar;. Comparison
+
+
+TestPerfSupersets:
+
+  With this class the execution times for the two methods supersets(Set)
+  and sortedArraySupersets(Set) from the class HashSetOfSets are compared.
+
+  To run the test, download the packages mathCollection.jar and
+  mathCollTests.jar.
+
+  Then execute on Linux:
+  java -Xmx400M -classpath mathCollection.jar:mathCollTests.jar:. TestPerfSupersets
+
+  On Windows execute:
+  java -Xmx400M -classpath mathCollection.jar;mathCollTests.jar;. TestPerfSupersets
+
+  Note that the test class TestPerfSupersets needs 400 Mbytes of heap memory.
+

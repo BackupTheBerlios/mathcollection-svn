@@ -1,0 +1,187 @@
+                     ChangeLog for project MathCollection
+
+
+Version 1.3.3:
+==============
+
+Starting with this version, the homepage of the software is
+http://mathcollection.berlios.de/
+
+
+Version 1.3.2:
+==============
+
+Improvements / additions:
+-------------------------
+
+BitMathIntSet:
+
+    * new method: toArray()
+
+
+Version 1.3.1:
+==============
+
+Bugfixes:
+---------
+
+BitMathIntSet:
+
+    * A bug in Constructor BitMathIntSet(int[]) was fixed.
+
+
+Version 1.3:
+============
+
+Starting with this version, the software is distributed under the GNU Lesser
+General Public License.
+
+
+Version 1.2.2:
+==============
+
+Improvements / additions:
+-------------------------
+
+BitMathIntSet:
+
+    * new method: getNext(int bitIndex)
+    * getMinimum(), getMaximum():
+      + description added for the case that the instance is empty.
+
+
+Version 1.2.1:
+==============
+
+Improvements / additions:
+-------------------------
+
+HashMultiset:
+
+    * add(Object o), remove(Object o), getQuantity(Object o):
+      + improved time efficiency by replacing unnecessary calls of method
+        myHashMap.containsKey.
+
+
+Version 1.2:
+============
+
+Bugfixes:
+---------
+
+HashSetOfSets:
+
+    * Iterator:
+      the internal structure no longer becomes inconsistent when an
+      exception is thrown in the remove() method.
+
+HashMultiset:
+
+    * Iterator:
+      remove() threw a ConcurrentModificationException instead of an
+      IllegalStateException in case of an attempt to remove an element
+      more than once.
+    * Iterator:
+      a ConcurrentModificationException now gets correctly thrown if the
+      multiset is changed by a destructive method while iterating over it.
+
+Improvements / additions:
+-------------------------
+
+BitMathIntSet:
+
+    * BitMathIntSet is a new class to represent mathematical sets with integer
+      elements. It is based on the BitSet class and is, on average, more time
+      and space efficient than a set of Integer objects.
+
+
+Version 1.1:
+============
+
+Bugfixes:
+---------
+
+AbstractMultiset:
+
+    * isSuperset(Collection c):
+      the result was incorrect under the following conditions:
+      + c is indeed an instance of Collection
+      + this has at least as many elements as c
+      + this has fewer distinct elements than c
+    * isSubset(Collection c):
+      the result was incorrect under the following conditions:
+      + c is indeed an instance of Collection
+      + this has the same number of _distinct_ elements as c has _overall_
+
+    Note: The above bug did _not_ occur if the methods from HashMultiset
+          were used.
+
+Improvements / additions:
+-------------------------
+
+Multiset:
+
+    * flatSetSize() renamed to setSize()
+
+SetOfSets:
+
+    * new methods: supersets() und subsets()
+
+AbstractMultiset:
+
+    * isSuperset(Collection c), isSubset(Collection c), equals(Object o):
+      improved time complexity when argument instanceof Set
+
+    * isSubset(Set s):
+      + improved time and space complexity by only considering the
+        intersection of the two sets
+
+HashMathSet:
+
+    * intersection(Set s):
+      + exactly those elements that belong in the resulting set get created
+      + required memory space reduced to the size of resultingSet
+      + improved time complexity when s instanceof HashMathSet
+
+    * difference(Set s), symmetricDifference(Set s):
+      + improved time and space complexity when s instanceof HashMathSet
+
+    * isSubset(Set s) (new method):
+      + improved time and space complexity by only considering the
+        intersection of the two sets
+
+HashMultiset:
+
+    * two new constructors accepting a parameter representing the initial
+      capacity for distinct elements.
+
+    * isSuperset(Collection c) / isSubset(Collection c):
+      + makes use of the AbstractMultiset.isSuperset(Collection c)
+        optimization when c instanceof Set
+      + improved time and space complexity when c (merely) instanceof
+        Collection
+
+    * union(Collection c):
+      + improved time complexity by removing the unnecessary iteration over c
+
+    * intersection(Collection c):
+      + improved time and space complexity by replacing the creation and
+        step-by-step reduction of resultingSet with a step-by-step build-up
+      + further improved time complexity when c instanceof HashMultiset
+
+    * difference(Collection c):
+      + improved time and space complexity
+      + further improved time and space complexity when c instanceof
+        HashMultiset
+
+HashSetOfSets:
+
+    * new methods: subsets(Set s), supersets(Set s),
+      sortedArraySupersets(Set s)
+
+
+Version 1.0:
+============
+
+First release
+
